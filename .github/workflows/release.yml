@@ -22,14 +22,14 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build extensions
-        run: npx vsce package -o "./dist/markdoc.vsix"
+        run: npx vsce package
 
       - name: Upload Extensions
         uses: softprops/action-gh-release@v1
         with:
-          files: dist/markdoc.vsix
+          files: markdoc-*.vsix
 
       - name: Publish Extension
-        run: npx vsce publish -p $VSCE_TOKEN -i ./dist/markdoc.vsix --yarn --noVerify
+        run: npx vsce publish -p $VSCE_TOKEN -i ./markdoc-*.vsix --yarn --noVerify
         env:
           VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
