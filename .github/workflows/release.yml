@@ -1,0 +1,35 @@
+on:
+  release:
+    types:
+      - created
+
+name: release
+jobs:
+  deploy:
+    name: Release Extension
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install node 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: ^14
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build extensions
+        run: npx vsce package -o "./dist/markdoc.vsix"
+
+      - name: Upload Extensions
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/markdoc.vsix
+
+      - name: Publish Extension
+        run: npx vsce publish -p $VSCE_TOKEN -i ./dist/markdoc.vsix --yarn --noVerify
+        env:
+          VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}

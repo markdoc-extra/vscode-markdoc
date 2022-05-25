@@ -1,0 +1,99 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Markdoc",
+  "patterns": [{ "include": "#markdoc" }, { "include": "#markdown" }],
+  "repository": {
+    "markdoc": {
+      "patterns": [
+        {
+          "begin": "\\{%",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.tag.begin.markdoc"
+            }
+          },
+          "end": "\\/?%\\}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.tag.end.markdoc"
+            }
+          },
+          "patterns": [
+            {
+              "match": "(?<=\\{%)(\\s*\\/?[\\w-]*\\b)",
+              "name": "punctuation.tag.markdoc"
+            },
+            {
+              "match": "(#)((?:\\w|-)*\\b)",
+              "captures": {
+                "1": {
+                  "name": "punctuation.entity.markdoc"
+                },
+                "2": {
+                  "name": "entity.other.attribute-name.id.markdoc"
+                }
+              }
+            },
+            {
+              "match": "(\\.)((?:\\w|-)*\\b)",
+              "captures": {
+                "1": {
+                  "name": "punctuation.entity.markdoc"
+                },
+                "2": {
+                  "name": "entity.other.attribute-name.class.markdoc"
+                }
+              }
+            },
+            {
+              "match": "\".*?\"",
+              "name": "string.markdoc"
+            },
+            {
+              "match": "(\\b\\w+)(\\=)",
+              "captures": {
+                "1": {
+                  "name": "entity.other.attribute-name.markdoc"
+                },
+                "2": {
+                  "name": "keyword.operator.markdoc"
+                }
+              }
+            },
+            {
+              "match": "\\b\\d+\\b",
+              "name": "constant.language.numeric.markdoc"
+            },
+            {
+              "match": "(\\$)([\\w.]+)",
+              "name": "variable.markdoc",
+              "patterns": [
+                {
+                  "match": "\\.",
+                  "name": "punctuation.variable.markdoc"
+                }
+              ]
+            },
+            {
+              "match": "\\b\\w+(?=\\()",
+              "name": "entity.name.function.markdoc"
+            },
+            {
+              "match": "({%|\\/?%})",
+              "name": "punctuation.markdoc"
+            },
+            {
+              "match": "false|true",
+              "name": "constant.language.boolean.markdoc"
+            }
+          ]
+        }
+      ]
+    },
+    "markdown": {
+      "contentName": "text.html.markdoc",
+      "patterns": [{ "include": "text.html.markdown" }]
+    }
+  },
+  "scopeName": "text.html.markdown.markdoc"
+}

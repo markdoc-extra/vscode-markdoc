@@ -1,0 +1,7 @@
+*.log
+coverage
+dist
+out
+node_modules
+*.vsix
+bin
