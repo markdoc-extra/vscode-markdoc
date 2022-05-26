@@ -20,6 +20,9 @@
     "block": {
       "patterns": [
         {
+          "include": "#markdoc"
+        },
+        {
           "include": "#separator"
         },
         {
@@ -45,9 +48,6 @@
         },
         {
           "include": "#paragraph"
-        },
-        {
-          "include": "#markdoc"
         }
       ]
     },
@@ -2462,6 +2462,9 @@
     "inline": {
       "patterns": [
         {
+          "include": "#markdoc"
+        },
+        {
           "include": "#ampersand"
         },
         {
@@ -2505,9 +2508,6 @@
         },
         {
           "include": "#link-ref-shortcut"
-        },
-        {
-          "include": "#markdoc"
         }
       ]
     },
