@@ -34,7 +34,7 @@
     "grammars": [
       {
         "language": "markdoc",
-        "scopeName": "text.html.markdown.markdoc",
+        "scopeName": "text.html.markdoc",
         "path": "./syntaxes/markdoc.tmLanguage.json",
         "embeddedLanguages": {
           "meta.embedded.block.html": "html",
