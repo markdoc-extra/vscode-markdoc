@@ -16,7 +16,7 @@
 </p>
 <br />
 
-Wrote this because there was no syntax highlighting available for markdoc. I've kept the extension to `.mdoc` but you can bind to as per your choice. Make a PR if you want to improve it until official one it out.
+Wrote this because there was no syntax highlighting available for markdoc. I've kept the extension to `.mdoc` but you can bind to as per your choice. Make a PR if you want to improve it until official one is out.
 
 ## Screenshot
 
