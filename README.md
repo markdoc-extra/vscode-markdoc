@@ -16,8 +16,22 @@
 </p>
 <br />
 
-Wrote this because there was no syntax highlighting available for markdoc. I've kept the extension to `.mdoc` but you can bind to as per your choice. Make a PR if you want to improve it until official one is out.
+## Usage
+
+`.mdoc` files will be highlighted by default with this. For others, you'll need to choose `markdoc` from language picker.
+
+To make this syntax default for your markdown files as well, add following to settings &mdash;
+
+```json
+"files.associations": {
+  "*.md": "markdoc"
+}
+```
 
 ## Screenshot
 
 ![screenshot](https://user-images.githubusercontent.com/4941333/170298388-213860ae-2a18-45ff-a830-f451e39eb266.png)
+
+## Contributing
+
+Make a PR [to the repo](https://github.com/mohitsinghs/vscode-markdoc) if you want to improve this syntax until official extension is out.
