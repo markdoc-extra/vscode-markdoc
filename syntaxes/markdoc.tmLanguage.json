@@ -2294,6 +2294,9 @@
           "begin": "(?i)(^|\\G)\\s*(?=</?[a-zA-Z]+[^\\s/&gt;]*(\\s|$|/?>))",
           "patterns": [
             {
+              "include": "#markdoc"
+            },
+            {
               "include": "text.html.derivative"
             }
           ],
@@ -2302,6 +2305,9 @@
         {
           "begin": "(^|\\G)\\s*(?=(<[a-zA-Z0-9\\-](/?>|\\s.*?>)|</[a-zA-Z0-9\\-]>)\\s*$)",
           "patterns": [
+            {
+              "include": "#markdoc"
+            },
             {
               "include": "text.html.derivative"
             }
