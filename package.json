@@ -26,7 +26,16 @@
           "markdoc"
         ],
         "extensions": [
-          ".mdoc"
+          ".mdoc",
+          ".md",
+          ".mkd",
+          ".mdwn",
+          ".mdown",
+          ".markdown",
+          ".markdn",
+          ".mdtxt",
+          ".mdtext",
+          ".workbook"
         ],
         "configuration": "./language-configuration.json"
       }
