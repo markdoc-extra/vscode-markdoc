@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## 0.3.1
+
+- Added autoclosing pair
+
 ## 0.3.0
 
 - Enabled markdoc inside html
