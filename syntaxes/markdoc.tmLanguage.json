@@ -2975,7 +2975,7 @@
       "end": "\\/?%\\}",
       "captures": {
         "0": {
-          "name": "punctuation.tag.markdown"
+          "name": "punctuation.definition.tag.markdown"
         }
       },
       "patterns": [
@@ -2996,13 +2996,13 @@
         },
         {
           "match": "(?<=\\{%)(\\s*\\/?[\\w-]*\\b)\\s+",
-          "name": "punctuation.tag.markdown"
+          "name": "entity.name.tag.markdown"
         },
         {
           "match": "(#)((?:\\w|-)*\\b)",
           "captures": {
             "1": {
-              "name": "punctuation.entity.markdown"
+              "name": "punctuation.definition.entity.markdown"
             },
             "2": {
               "name": "entity.other.attribute-name.id.markdown"
@@ -3013,7 +3013,7 @@
           "match": "(\\.)((?:\\w|-)*\\b)",
           "captures": {
             "1": {
-              "name": "punctuation.entity.markdown"
+              "name": "punctuation.definition.entity.markdown"
             },
             "2": {
               "name": "entity.other.attribute-name.class.markdown"
