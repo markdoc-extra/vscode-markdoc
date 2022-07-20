@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## 0.4.0
+
+- Hightlight tags and entity names same as html in order to support more themes
+
 ## 0.3.1
 
 - Added autoclosing pair
