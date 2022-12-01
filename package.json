@@ -15,9 +15,26 @@
   },
   "publisher": "mohitsingh",
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Formatters"
   ],
   "contributes": {
+    "configuration": {
+      "title": "Markdoc",
+      "properties": {
+        "markdoc.serverPath": {
+          "type": "string",
+          "description": "Custom path of markdoc language server binary (markdoc-ls)"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "markdoc.restart",
+        "title": "Restart Language Server",
+        "category": "Markdoc"
+      }
+    ],
     "languages": [
       {
         "id": "markdoc",
@@ -87,12 +104,30 @@
       }
     ]
   },
+  "activationEvents": [
+    "onLanguage:markdoc"
+  ],
+  "main": "./out/extension",
   "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node build",
+    "lint": "eslint ./src --ext .ts,.tsx",
     "update-grammar": "node ./build/update-grammar.mjs",
     "postupdate-grammar": "prettier --write ./syntaxes/markdoc.tmLanguage.json"
   },
+  "dependencies": {
+    "esbuild-wasm": "^0.15.15",
+    "markdoc-ls": "^0.3.0"
+  },
   "devDependencies": {
+    "@types/node": "^16.11.7",
+    "@types/vscode": "^1.67.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "eslint": "^8.13.0",
+    "typescript": "^4.7.2",
     "prettier": "^2.8.4",
-    "vscode-grammar-updater": "^1.1.0"
+    "vscode-grammar-updater": "^1.1.0",
+    "vscode-languageclient": "^8.0.2"
   }
 }
