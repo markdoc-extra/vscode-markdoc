@@ -18,7 +18,7 @@
 
 ## Usage
 
-`.mdoc` files will be highlighted by default with this. For others, you'll need to choose `markdoc` from language picker.
+`.mdoc` and `.markdoc` files will be highlighted by default with this. For others, you'll need to choose `markdoc` from language picker.
 
 To make this syntax default for your markdown files as well, add following to settings &mdash;
 
