@@ -5,7 +5,7 @@
 </p>
 <p align='center'>
   <a href="https://github.com/mohitsinghs/vscode-markdoc/actions/workflows/release.yml">
-    <img alt="Release" src="https://img.shields.io/github/workflow/status/mohitsinghs/vscode-markdoc/release?style=flat-square" />
+    <img alt="Release" src="https://img.shields.io/github/actions/workflow/status/mohitsinghs/vscode-markdoc/release.yml?style=flat-square" />
   </a>
   <a href="https://github.com/mohitsinghs/vscode-markdoc/blob/main/LICENSE">
     <img alt="LICENSE" src="https://img.shields.io/github/license/mohitsinghs/vscode-markdoc?style=flat-square" />
