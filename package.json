@@ -41,7 +41,6 @@
           "meta.embedded.block.html": "html",
           "source.js": "javascript",
           "source.css": "css",
-          "text.html.markdown": "markdown",
           "meta.embedded.block.frontmatter": "yaml",
           "meta.embedded.block.css": "css",
           "meta.embedded.block.ini": "ini",
@@ -69,6 +68,8 @@
           "meta.embedded.block.pug": "jade",
           "meta.embedded.block.javascript": "javascript",
           "meta.embedded.block.json": "json",
+          "meta.embedded.block.jsonc": "jsonc",
+          "meta.embedded.block.latex": "latex",
           "meta.embedded.block.less": "less",
           "meta.embedded.block.objc": "objc",
           "meta.embedded.block.scss": "scss",
@@ -85,5 +86,13 @@
         }
       }
     ]
+  },
+  "scripts": {
+    "update-grammar": "node ./build/update-grammar.mjs",
+    "postupdate-grammar": "prettier --write ./syntaxes/markdoc.tmLanguage.json"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4",
+    "vscode-grammar-updater": "^1.1.0"
   }
 }

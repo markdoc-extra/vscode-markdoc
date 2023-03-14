@@ -1,0 +1,250 @@
+{
+  "markdoc": {
+    "begin": "\\{%",
+    "end": "\\/?%\\}",
+    "captures": {
+      "0": {
+        "name": "punctuation.definition.tag.markdown"
+      }
+    },
+    "patterns": [
+      {
+        "include": "#primitives"
+      },
+      {
+        "include": "#function"
+      },
+      {
+        "include": "#array"
+      },
+      {
+        "include": "#object"
+      },
+      {
+        "include": "#variable"
+      },
+      {
+        "match": "(?<=\\{%)(\\s*\\/?[\\w-]*\\b)\\s+",
+        "name": "entity.name.tag.markdown"
+      },
+      {
+        "match": "(#)((?:\\w|-)*\\b)",
+        "captures": {
+          "1": {
+            "name": "punctuation.definition.entity.markdown"
+          },
+          "2": {
+            "name": "entity.other.attribute-name.id.markdown"
+          }
+        }
+      },
+      {
+        "match": "(\\.)((?:\\w|-)*\\b)",
+        "captures": {
+          "1": {
+            "name": "punctuation.definition.entity.markdown"
+          },
+          "2": {
+            "name": "entity.other.attribute-name.class.markdown"
+          }
+        }
+      },
+      {
+        "match": "(\\b\\w+)(\\=)",
+        "captures": {
+          "1": {
+            "name": "entity.other.attribute-name.markdown"
+          },
+          "2": {
+            "name": "keyword.operator.markdown"
+          }
+        }
+      },
+      {
+        "match": "(\\$)([\\w.\\[\\]]+)",
+        "name": "variable.markdown",
+        "captures": {
+          "1": {
+            "name": "variable.sigil.markdown"
+          },
+          "2": {
+            "patterns": [
+              {
+                "include": "#punctuation-accessor"
+              },
+              {
+                "begin": "\\[",
+                "end": "\\]",
+                "captures": {
+                  "0": {
+                    "name": "meta.brace.square.markdown"
+                  }
+                },
+                "patterns": [
+                  {
+                    "include": "#primitives"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "match": "({%|\\/?%})",
+        "name": "punctuation.definition.tag.markdown"
+      }
+    ]
+  },
+  "punctuation-comma": {
+    "name": "punctuation.separator.comma.markdown",
+    "match": ","
+  },
+  "punctuation-accessor": {
+    "match": "(?:(\\.))",
+    "captures": {
+      "1": {
+        "name": "punctuation.accessor.markdown"
+      }
+    }
+  },
+  "primitives": {
+    "patterns": [
+      {
+        "match": "\".*?\"",
+        "name": "string.markdown"
+      },
+      {
+        "match": "\\b\\d+\\.?\\d+?\\b",
+        "name": "constant.language.numeric.markdown"
+      },
+      {
+        "match": "false|true",
+        "name": "constant.language.boolean.markdown"
+      },
+      {
+        "match": "null",
+        "name": "constant.language.null.markdown"
+      }
+    ]
+  },
+  "function": {
+    "match": "\\b\\w+(?=\\()",
+    "name": "entity.name.function.markdown"
+  },
+  "array": {
+    "name": "meta.array.markdown",
+    "begin": "\\[",
+    "end": "\\]",
+    "captures": {
+      "0": {
+        "name": "meta.brace.square.markdown"
+      }
+    },
+    "patterns": [
+      {
+        "include": "#primitives"
+      },
+      {
+        "include": "#punctuation-comma"
+      },
+      {
+        "include": "#variable"
+      },
+      {
+        "include": "#function"
+      },
+      {
+        "include": "#array"
+      }
+    ]
+  },
+  "object": {
+    "name": "meta.object.markdown",
+    "begin": "\\{",
+    "end": "\\}",
+    "captures": {
+      "0": {
+        "name": "punctuation.definition.block.markdown"
+      }
+    },
+    "patterns": [
+      {
+        "match": "(?:[_$[:alpha:]][_$[:alnum:]]*)\\s*(?=(\\/\\*([^\\*]|(\\*[^\\/]))*\\*\\/\\s*)*:)",
+        "captures": {
+          "0": {
+            "name": "meta.object-literal.key.markdown"
+          }
+        }
+      },
+      {
+        "begin": ":",
+        "beginCaptures": {
+          "0": {
+            "name": "punctuation.separator.key-value.markdown"
+          }
+        },
+        "end": "(?=,|\\})",
+        "patterns": [
+          {
+            "include": "#primitives"
+          },
+          {
+            "include": "#variable"
+          },
+          {
+            "include": "#function"
+          },
+          {
+            "include": "#array"
+          },
+          {
+            "include": "#object"
+          }
+        ]
+      },
+      {
+        "include": "#primitives"
+      },
+      {
+        "include": "#variable"
+      },
+      {
+        "include": "#function"
+      },
+      {
+        "include": "#punctuation-comma"
+      }
+    ]
+  },
+  "variable": {
+    "match": "(\\$)([\\w.\\[\\]]+)",
+    "name": "variable.markdown",
+    "captures": {
+      "1": {
+        "name": "variable.sigil.markdown"
+      },
+      "2": {
+        "patterns": [
+          {
+            "include": "#punctuation-accessor"
+          },
+          {
+            "begin": "\\[",
+            "end": "\\]",
+            "captures": {
+              "0": {
+                "name": "meta.brace.square.markdown"
+              }
+            },
+            "patterns": [
+              {
+                "include": "#primitives"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
