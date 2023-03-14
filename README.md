@@ -34,4 +34,6 @@ To make this syntax default for your markdown files as well, add following to se
 
 ## Contributing
 
-Make a PR [to the repo](https://github.com/mohitsinghs/vscode-markdoc) if you want to improve this syntax until official extension is out.
+Make a PR [to the repo](https://github.com/mohitsinghs/vscode-markdoc) if you want to improve this syntax.
+
+The language grammar is generated from [vscode-markdown-tm-grammar](https://github.com/microsoft/vscode-markdown-tm-grammar). Any grammar related modification should go to `./build/markdoc.json` and a subsequent `npm run update-grammar` will generate `./syntaxes/markdoc.tmLanguage.json`.

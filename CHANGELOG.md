@@ -6,6 +6,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+- We now generate grammar from tmLanguage. This ensures that markdown grammar is always up-to-date and we only have to care about markdoc part with is in `build` directory.
+
 ## 0.4.1
 
 - Limited to highlighting `.mdoc` and `.markdoc` files only. Highlighting all markdown extensions should be left to user.
