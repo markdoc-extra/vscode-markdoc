@@ -6,6 +6,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## 0.4.1
+
+- Limited to highlighting `.mdoc` and `.markdoc` files only. Highlighting all markdown extensions should be left to user.
+- Fixed floats not being recognized.
+
 ## 0.4.0
 
 - Hightlight tags and entity names same as html in order to support more themes

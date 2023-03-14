@@ -2,7 +2,7 @@
   "name": "markdoc",
   "displayName": "Markdoc",
   "description": "Syntax highlighting for markdoc",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": "Mohit Singh <mohit@mohitsingh.in>",
   "license": "MIT",
   "repository": {
