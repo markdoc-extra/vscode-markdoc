@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mohitsinghs/vscode-markdoc"
+    "url": "https://github.com/markdoc-extra/vscode-markdoc"
   },
   "icon": "images/icon.png",
   "engines": {

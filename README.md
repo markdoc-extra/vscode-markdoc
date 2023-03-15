@@ -4,11 +4,11 @@
   <sub>Visit <a href="https://markdoc.io">markdoc.io</a> to learn more about markdoc</sub>
 </p>
 <p align='center'>
-  <a href="https://github.com/mohitsinghs/vscode-markdoc/actions/workflows/release.yml">
-    <img alt="Release" src="https://img.shields.io/github/actions/workflow/status/mohitsinghs/vscode-markdoc/release.yml?style=flat-square" />
+  <a href="https://github.com/markdoc-extra/vscode-markdoc/actions/workflows/release.yml">
+    <img alt="Release" src="https://img.shields.io/github/actions/workflow/status/markdoc-extra/vscode-markdoc/release.yml?style=flat-square" />
   </a>
-  <a href="https://github.com/mohitsinghs/vscode-markdoc/blob/main/LICENSE">
-    <img alt="LICENSE" src="https://img.shields.io/github/license/mohitsinghs/vscode-markdoc?style=flat-square" />
+  <a href="https://github.com/markdoc-extra/vscode-markdoc/blob/main/LICENSE">
+    <img alt="LICENSE" src="https://img.shields.io/github/license/markdoc-extra/vscode-markdoc?style=flat-square" />
   </a>
   <img alt="version" src="https://img.shields.io/visual-studio-marketplace/v/mohitsingh.markdoc?style=flat-square" />
   <img alt="installs" src="https://img.shields.io/visual-studio-marketplace/i/mohitsingh.markdoc?style=flat-square" />
@@ -34,6 +34,6 @@ To make this syntax default for your markdown files as well, add following to se
 
 ## Contributing
 
-Make a PR [to the repo](https://github.com/mohitsinghs/vscode-markdoc) if you want to improve this syntax.
+Make a PR [to the repo](https://github.com/markdoc-extra/vscode-markdoc) if you want to improve this syntax.
 
 The language grammar is generated from [vscode-markdown-tm-grammar](https://github.com/microsoft/vscode-markdown-tm-grammar). Any grammar related modification should go to `./build/markdoc.json` and a subsequent `npm run update-grammar` will generate `./syntaxes/markdoc.tmLanguage.json`.
