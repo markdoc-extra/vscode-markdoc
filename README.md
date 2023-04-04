@@ -20,7 +20,7 @@
 
 `.mdoc` and `.markdoc` files will be highlighted by default with this. For others, you'll need to choose `markdoc` from language picker.
 
-To make this syntax default for your markdown files as well, add following to settings &mdash;
+To make this syntax default for your markdown files as well, add following to settings ( this will break markdown preview ) &mdash;
 
 ```json
 "files.associations": {
@@ -31,6 +31,17 @@ To make this syntax default for your markdown files as well, add following to se
 ## Screenshot
 
 ![screenshot](https://user-images.githubusercontent.com/4941333/170298388-213860ae-2a18-45ff-a830-f451e39eb266.png)
+
+## Commands
+
+- `Markdoc: Restart Language Server` - This commands restarts Markdoc Language Server.
+
+## Settings
+
+This extension provides following settings &mdash;
+
+- `markdoc.experimental` : This enables experimental language server and related features. ( `boolean` , default : `false` )
+- `markdoc.serverPath` : Custom path of markdoc language server binary (markdoc-ls).
 
 ## Contributing
 
