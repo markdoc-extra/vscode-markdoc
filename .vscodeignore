@@ -1,2 +1,12 @@
 build/**
 cgmanifest.json
+.vscode/**
+**/*.ts
+**/*.map
+.gitignore
+.github
+.eslintignore
+**/tsconfig.json
+build.js
+node_modules/
+!node_modules/markdoc-ls

@@ -4,7 +4,9 @@ import * as fs from 'fs'
 function injectMarkdoc(grammar) {
   grammar.name = 'Markdoc'
   grammar.scopeName = 'text.html.markdoc'
-  const injections = JSON.parse(fs.readFileSync('./build/markdoc.json', 'utf8'))
+  const injections = JSON.parse(
+    fs.readFileSync('./scripts/markdoc.json', 'utf8')
+  )
   grammar.repository = {
     ...grammar.repository,
     ...injections,
