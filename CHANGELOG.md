@@ -6,6 +6,8 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## 0.5.0
+
 - We now generate grammar from tmLanguage. This ensures that markdown grammar is always up-to-date. The markdoc part of grammar lives in `scripts/markdoc.json`.
 - There is new language server bundled with extension. It can be enable by setting `markdoc.experimental` config to `true`.
 
