@@ -25,6 +25,10 @@
         "markdoc.serverPath": {
           "type": "string",
           "description": "Custom path of markdoc language server binary (markdoc-ls)"
+        },
+        "markdoc.experimental": {
+          "type": "boolean",
+          "description": "Enable experimental language server for markdoc"
         }
       }
     },
@@ -110,9 +114,9 @@
   "main": "./out/extension",
   "scripts": {
     "vscode:prepublish": "npm run build",
-    "build": "node build",
+    "build": "node ./scripts/build.mjs",
     "lint": "eslint ./src --ext .ts,.tsx",
-    "update-grammar": "node ./build/update-grammar.mjs",
+    "update-grammar": "node ./scripts/update-grammar.mjs",
     "postupdate-grammar": "prettier --write ./syntaxes/markdoc.tmLanguage.json"
   },
   "dependencies": {
