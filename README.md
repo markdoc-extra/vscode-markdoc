@@ -18,15 +18,9 @@
 
 ## Usage
 
-`.mdoc` and `.markdoc` files will be highlighted by default with this. For others, you'll need to choose `markdoc` from language picker.
+This extension enables syntax highlighting for Markdoc files ( files with `.mdoc` or `.markdoc` extensions ).
 
-To make this syntax default for your markdown files as well, add following to settings ( this will break markdown preview ) &mdash;
-
-```json
-"files.associations": {
-  "*.md": "markdoc"
-}
-```
+> Experimental support for formatting, linting and other features is work in progress and can be enabled with `markdoc.experimental` setting. Please note that it is only supported for [Next Markdoc Schema](https://markdoc.dev/docs/nextjs#schema-customization). Contributions are welcome to support other config formats.
 
 ## Screenshot
 
