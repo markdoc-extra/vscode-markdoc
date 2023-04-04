@@ -116,16 +116,16 @@
     "postupdate-grammar": "prettier --write ./syntaxes/markdoc.tmLanguage.json"
   },
   "dependencies": {
-    "markdoc-ls": "^0.4.0"
+    "markdoc-ls": "^0.5.0"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
     "@types/vscode": "^1.67.0",
-    "@typescript-eslint/eslint-plugin": "^5.57.0",
-    "@typescript-eslint/parser": "^5.57.0",
-    "esbuild": "^0.17.14",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "esbuild": "^0.17.15",
     "eslint": "^8.37.0",
-    "typescript": "^5.0.2",
+    "typescript": "^5.0.3",
     "prettier": "^2.8.7",
     "vscode-grammar-updater": "^1.1.0",
     "vscode-languageclient": "^8.1.0"
