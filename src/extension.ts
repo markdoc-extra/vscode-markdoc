@@ -1,6 +1,11 @@
 import * as path from 'path'
 import * as vscode from 'vscode'
-import { LanguageClient } from 'vscode-languageclient/node'
+import {
+  LanguageClient,
+  LanguageClientOptions,
+  ServerOptions,
+  TransportKind,
+} from 'vscode-languageclient/node'
 
 let client: LanguageClient
 
@@ -21,22 +26,34 @@ export async function activate(context: vscode.ExtensionContext) {
     try {
       await client.restart()
     } catch (e) {
-      client.error('Failed to restart client', e, 'force')
+      client.error('failed to restart client', e, 'force')
     }
   })
+
+  const clientOptions: LanguageClientOptions = {
+    documentSelector: [{ scheme: 'file', language: 'markdoc' }],
+  }
+  const serverOptions: ServerOptions = {
+    module: serverModule,
+    transport: TransportKind.ipc,
+  }
 
   client = new LanguageClient(
     'markdoc-ls',
     'Markdoc Language Server',
-    { module: serverModule },
-    { documentSelector: [{ scheme: 'file', language: 'markdoc' }] }
+    serverOptions,
+    clientOptions
   )
 
-  await client.start()
+  try {
+    await client.start()
+  } catch (e) {
+    client.error('failed to start client', e, 'force')
+  }
 }
 
-export async function deactivate(): Promise<void> | undefined {
+export function deactivate() {
   if (client) {
-    await client.stop()
+    return client.stop()
   }
 }
