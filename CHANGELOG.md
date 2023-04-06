@@ -6,6 +6,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## 0.6.0
+
+- esbuild-wasm is now bundled with extension to enable effecient config parsing.
+
 ## 0.5.0
 
 - We now generate grammar from tmLanguage. This ensures that markdown grammar is always up-to-date. The markdoc part of grammar lives in `scripts/markdoc.json`.
