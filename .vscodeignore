@@ -10,3 +10,4 @@ cgmanifest.json
 build.js
 node_modules/
 !node_modules/markdoc-ls
+!node_modules/esbuild-wasm
