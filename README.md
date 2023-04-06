@@ -20,7 +20,7 @@
 
 This extension enables syntax highlighting for Markdoc files ( files with `.mdoc` or `.markdoc` extensions ).
 
-> Experimental support for formatting, linting and other features is work in progress and can be enabled with `markdoc.experimental` setting. Please note that it is only supported for [Next Markdoc Schema](https://markdoc.dev/docs/nextjs#schema-customization). See [supported features](https://github.com/markdoc-extra/markdoc-ls/discussions/2)
+> Experimental support for formatting, linting and other features is work in progress and can be enabled with `markdoc.experimental` setting. See [supported features](https://github.com/markdoc-extra/markdoc-ls/discussions/2)
 
 ## Screenshot
 
