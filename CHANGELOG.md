@@ -6,9 +6,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## 0.6.1
+
+- The language server now survives esbuild crash during config parsing.
+
 ## 0.6.0
 
-- esbuild-wasm is now bundled with extension to enable effecient config parsing.
+- esbuild-wasm is now bundled with extension to enable efficient config parsing.
 
 ## 0.5.0
 
