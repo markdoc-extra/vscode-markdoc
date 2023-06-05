@@ -115,7 +115,7 @@
         "name": "string.markdown"
       },
       {
-        "match": "\\b\\d+\\.?\\d+?\\b",
+        "match": "\\b\\d+\\.?\\d*\\b",
         "name": "constant.language.numeric.markdown"
       },
       {
