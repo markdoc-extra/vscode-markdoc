@@ -8,6 +8,7 @@ cgmanifest.json
 .eslintignore
 **/tsconfig.json
 build.js
+scripts/
 node_modules/
 !node_modules/markdoc-ls
 !node_modules/esbuild-wasm
