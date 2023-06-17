@@ -32,7 +32,7 @@ This extension enables Language support for Markdoc files ( files with `.mdoc` o
 
 ## Settings
 
-This extension provides following settings &mdash;
+This extension provides following settings —
 
 - `markdoc.experimental` : This enables experimental language server and related features. ( `boolean` , default : `false` )
 - `markdoc.serverPath` : Custom path of markdoc language server binary (markdoc-ls).
@@ -40,5 +40,3 @@ This extension provides following settings &mdash;
 ## Contributing
 
 Make a PR [to the repo](https://github.com/markdoc-extra/vscode-markdoc) if you want to improve this extension.
-
-The language grammar is generated from [vscode-markdown-tm-grammar](https://github.com/microsoft/vscode-markdown-tm-grammar). Any grammar related modification should go to `./build/markdoc.json` and a subsequent `npm run update-grammar` will generate `./syntaxes/markdoc.tmLanguage.json`.
