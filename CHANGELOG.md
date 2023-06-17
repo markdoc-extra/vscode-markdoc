@@ -6,6 +6,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
+## 0.6.2
+
+- We are now using injection for language grammar instead of building grammar
+- excluded scripts from extension package
+- fixed broken highlight for numbers
+
 ## 0.6.1
 
 - The language server now survives esbuild crash during config parsing.

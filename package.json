@@ -2,7 +2,7 @@
   "name": "markdoc",
   "displayName": "Markdoc",
   "description": "Language support for markdoc",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "author": "Mohit Singh <mohit@mohitsingh.in>",
   "license": "MIT",
   "repository": {
