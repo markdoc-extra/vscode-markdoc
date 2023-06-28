@@ -18,9 +18,7 @@
 
 ## Usage
 
-This extension enables Language support for Markdoc files ( files with `.mdoc` or `.markdoc` extensions ).
-
-> Experimental support for formatting, linting and other features is work in progress and can be enabled with `markdoc.experimental` setting. See [supported features](https://github.com/markdoc-extra/markdoc-ls/discussions/2)
+This extension enables Language support for Markdoc files ( files with `.mdoc` or `.markdoc` extensions ). You can also enjoy formatting, diagnostics and some other feature by using `markdoc.experimental` setting.
 
 ## Screenshot
 
@@ -35,7 +33,7 @@ This extension enables Language support for Markdoc files ( files with `.mdoc` o
 This extension provides following settings —
 
 - `markdoc.experimental` : This enables experimental language server and related features. ( `boolean` , default : `false` )
-- `markdoc.serverPath` : Custom path of markdoc language server binary (markdoc-ls).
+- `markdoc.serverPath` : Custom path of markdoc language server binary ([markdoc-ls](https;//github.com/markdoc-extra/markdoc-ls)).
 
 ## Contributing
 
