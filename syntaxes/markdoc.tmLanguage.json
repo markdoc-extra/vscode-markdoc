@@ -2,10 +2,14 @@
   "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
   "name": "Markdoc",
   "scopeName": "text.html.markdoc",
-  "patterns": [{ "include": "#markdoc" }, { "include": "text.html.markdown" }],
+  "patterns": [
+    { "include": "#markdoc" },
+    { "include": "#markdoc-inline" },
+    { "include": "text.html.markdown" }
+  ],
   "repository": {
     "markdoc": {
-      "begin": "(\\{%)\\s*(\\/?[a-zA-Z][\\w-]*\\b)?\\s*",
+      "begin": "(\\{%)\\s*(\\/?[a-zA-Z][\\w-]*)\\s+",
       "end": "\\s*\\/?\\s*%\\}",
       "beginCaptures": {
         "1": { "name": "punctuation.definition.tag.begin.markdoc" },
@@ -20,6 +24,25 @@
         { "include": "#compound" },
         { "include": "#variable" },
         { "include": "#attribute-name" }
+      ]
+    },
+    "markdoc-inline": {
+      "begin": "(\\{%)\\s*(?=([$@.#]|[a-zA-Z][\\w-]*[\\(=]))",
+      "end": "\\s*%\\}",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.markdoc" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.tag.end.markdoc" }
+      },
+      "patterns": [
+        { "include": "#shorthand-id" },
+        { "include": "#shorthand-class" },
+        { "include": "#attribute-name" },
+        { "include": "#primitives" },
+        { "include": "#function" },
+        { "include": "#compound" },
+        { "include": "#variable" }
       ]
     },
     "punctuation-comma": {
