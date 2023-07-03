@@ -5,136 +5,80 @@
   "patterns": [{ "include": "#markdoc" }, { "include": "text.html.markdown" }],
   "repository": {
     "markdoc": {
-      "begin": "\\{%",
-      "end": "\\/?%\\}",
-      "captures": {
-        "0": {
-          "name": "punctuation.definition.tag.markdoc"
-        }
+      "begin": "(\\{%)\\s*(\\/?[a-zA-Z][\\w-]*\\b)?\\s*",
+      "end": "\\s*\\/?\\s*%\\}",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.markdoc" },
+        "2": { "name": "entity.name.tag.markdoc" }
+      },
+      "endCaptures": {
+        "0": { "name": "punctuation.definition.tag.end.markdoc" }
       },
       "patterns": [
-        {
-          "include": "#primitives"
-        },
-        {
-          "include": "#function"
-        },
-        {
-          "include": "#array"
-        },
-        {
-          "include": "#object"
-        },
-        {
-          "include": "#variable"
-        },
-        {
-          "match": "(?<=\\{%)(\\s*\\/?[\\w-]*\\b)\\s+",
-          "name": "entity.name.tag.markdoc"
-        },
-        {
-          "match": "(#)((?:\\w|-)*\\b)",
-          "captures": {
-            "1": {
-              "name": "punctuation.definition.entity.markdoc"
-            },
-            "2": {
-              "name": "entity.other.attribute-name.id.markdoc"
-            }
-          }
-        },
-        {
-          "match": "(\\.)((?:\\w|-)*\\b)",
-          "captures": {
-            "1": {
-              "name": "punctuation.definition.entity.markdoc"
-            },
-            "2": {
-              "name": "entity.other.attribute-name.class.markdoc"
-            }
-          }
-        },
-        {
-          "match": "(\\b\\w+)(\\=)",
-          "captures": {
-            "1": {
-              "name": "entity.other.attribute-name.markdoc"
-            },
-            "2": {
-              "name": "keyword.operator.markdoc"
-            }
-          }
-        },
-        {
-          "match": "(\\$)([\\w.\\[\\]]+)",
-          "name": "variable.markdoc",
-          "captures": {
-            "1": {
-              "name": "variable.sigil.markdoc"
-            },
-            "2": {
-              "patterns": [
-                {
-                  "include": "#punctuation-accessor"
-                },
-                {
-                  "begin": "\\[",
-                  "end": "\\]",
-                  "captures": {
-                    "0": {
-                      "name": "meta.brace.square.markdoc"
-                    }
-                  },
-                  "patterns": [
-                    {
-                      "include": "#primitives"
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        },
-        {
-          "match": "({%|\\/?%})",
-          "name": "punctuation.definition.tag.markdoc"
-        }
+        { "include": "#primitives" },
+        { "include": "#function" },
+        { "include": "#compound" },
+        { "include": "#variable" },
+        { "include": "#attribute-name" }
       ]
     },
     "punctuation-comma": {
       "name": "punctuation.separator.comma.markdoc",
       "match": ","
     },
-    "punctuation-accessor": {
-      "match": "(?:(\\.))",
+    "attribute-name": {
+      "match": "(\\b[a-zA-Z][\\w-]*)(\\=)",
       "captures": {
         "1": {
-          "name": "punctuation.accessor.markdoc"
+          "name": "entity.other.attribute-name.markdoc"
+        },
+        "2": {
+          "name": "punctuation.separator.key-value.markdoc"
         }
       }
     },
+    "shorthand-class": {
+      "match": "(#)((?:[a-zA-Z][\\w-]*)\\b)",
+      "captures": {
+        "1": { "name": "punctuation.definition.entity.markdoc" },
+        "2": { "name": "entity.other.attribute-name.id.markdoc" }
+      }
+    },
+    "shorthand-id": {
+      "match": "(\\.)((?:[a-zA-Z][\\w-]*)\\b)",
+      "captures": {
+        "1": { "name": "punctuation.definition.entity.markdoc" },
+        "2": { "name": "entity.other.attribute-name.class.markdoc" }
+      }
+    },
+    "string": {
+      "match": "\".*?\"",
+      "name": "string.quoted.markdoc"
+    },
+    "number": {
+      "match": "\\b\\d+\\.?\\d*\\b",
+      "name": "constant.language.numeric.markdoc"
+    },
+    "boolean": {
+      "match": "false|true",
+      "name": "constant.language.boolean.markdoc"
+    },
+    "null": {
+      "match": "null",
+      "name": "constant.language.null.markdoc"
+    },
     "primitives": {
       "patterns": [
-        {
-          "match": "\".*?\"",
-          "name": "string.markdoc"
-        },
-        {
-          "match": "\\b\\d+\\.?\\d*\\b",
-          "name": "constant.language.numeric.markdoc"
-        },
-        {
-          "match": "false|true",
-          "name": "constant.language.boolean.markdoc"
-        },
-        {
-          "match": "null",
-          "name": "constant.language.null.markdoc"
-        }
+        { "include": "#string" },
+        { "include": "#number" },
+        { "include": "#boolean" }
       ]
     },
+    "compound": {
+      "patterns": [{ "include": "#array" }, { "include": "#object" }]
+    },
     "function": {
-      "match": "\\b\\w+(?=\\()",
+      "match": "\\b[a-zA-Z][\\w-]*(?=\\()",
       "name": "entity.name.function.markdoc"
     },
     "array": {
@@ -147,21 +91,11 @@
         }
       },
       "patterns": [
-        {
-          "include": "#primitives"
-        },
-        {
-          "include": "#punctuation-comma"
-        },
-        {
-          "include": "#variable"
-        },
-        {
-          "include": "#function"
-        },
-        {
-          "include": "#array"
-        }
+        { "include": "#primitives" },
+        { "include": "#punctuation-comma" },
+        { "include": "#variable" },
+        { "include": "#function" },
+        { "include": "#compound" }
       ]
     },
     "object": {
@@ -170,12 +104,12 @@
       "end": "\\}",
       "captures": {
         "0": {
-          "name": "punctuation.definition.block.markdoc"
+          "name": "meta.brace.curly.markdoc"
         }
       },
       "patterns": [
         {
-          "match": "(?:[_$[:alpha:]][_$[:alnum:]]*)\\s*(?=(\\/\\*([^\\*]|(\\*[^\\/]))*\\*\\/\\s*)*:)",
+          "match": "(?:[a-zA-Z][\\w-]*|\".*?\")\\s*(?=\\s*:)",
           "captures": {
             "0": {
               "name": "meta.object-literal.key.markdoc"
@@ -184,68 +118,44 @@
         },
         {
           "begin": ":",
+          "end": "(?=,|\\})",
           "beginCaptures": {
             "0": {
               "name": "punctuation.separator.key-value.markdoc"
             }
           },
-          "end": "(?=,|\\})",
           "patterns": [
-            {
-              "include": "#primitives"
-            },
-            {
-              "include": "#variable"
-            },
-            {
-              "include": "#function"
-            },
-            {
-              "include": "#array"
-            },
-            {
-              "include": "#object"
-            }
+            { "include": "#primitives" },
+            { "include": "#variable" },
+            { "include": "#function" },
+            { "include": "#compound" }
           ]
         },
-        {
-          "include": "#primitives"
-        },
-        {
-          "include": "#variable"
-        },
-        {
-          "include": "#function"
-        },
-        {
-          "include": "#punctuation-comma"
-        }
+        { "include": "#punctuation-comma" }
       ]
     },
     "variable": {
-      "match": "(\\$)([\\w.\\[\\]]+)",
+      "match": "(?<variable>(\\$)([a-zA-Z][\\w-]*)((?:\\.[a-zA-Z][\\w-]*|\\[(?:\\d+|\".*?\"|\\g'variable')\\])*))",
       "name": "variable.markdoc",
       "captures": {
-        "1": {
-          "name": "variable.sigil.markdoc"
-        },
-        "2": {
+        "2": { "name": "variable.sigil.markdoc" },
+        "3": { "name": "variable.markdoc" },
+        "4": {
           "patterns": [
             {
-              "include": "#punctuation-accessor"
+              "match": "(\\.)([a-zA-Z][\\w-]*)\\b",
+              "captures": {
+                "1": { "name": "punctuation.accessor.markdoc" },
+                "2": { "name": "variable.other.property" }
+              }
             },
             {
               "begin": "\\[",
               "end": "\\]",
-              "captures": {
-                "0": {
-                  "name": "meta.brace.square.markdoc"
-                }
-              },
               "patterns": [
-                {
-                  "include": "#primitives"
-                }
+                { "match": "\\d+", "name": "constant.numeric" },
+                { "include": "#string" },
+                { "include": "#variable" }
               ]
             }
           ]
